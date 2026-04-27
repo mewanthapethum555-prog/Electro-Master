@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Electro cart</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- CSS
+        ============================================ -->
+        <!-- Slick -->
+        <link type="text/css" rel="stylesheet" href="css/slick.css"/>
+        <link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+        <!-- Bootstrap -->
+
+        <!-- nouislider -->
+        <link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+        <!-- Custom stlylesheet -->
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="css/vendor/font-awesome.css">
+        <link rel="stylesheet" href="css/vendor/flaticon/flaticon.css">
+        <link rel="stylesheet" href="css/vendor/slick.css">
+        <link rel="stylesheet" href="css/vendor/slick-theme.css">
+        <link rel="stylesheet" href="css/vendor/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/vendor/sal.css">
+        <link rel="stylesheet" href="css/vendor/magnific-popup.css">
+        <link rel="stylesheet" href="css/vendor/base.css">
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="css/vendor/style.min.css">
+        <link rel="stylesheet" href="css/notification.css">
+
+    </head>
+
+
+    <body class="sticky-header" onload="loadCartItems();">
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+        <a href="#top" class="back-to-top" id="backto-top"><i class="fal fa-arrow-up"></i></a>
+        <!-- Start Header -->
+        <header>
+            <!-- Top Header -->
+            <div id="top-header" class="section">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap text-white">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-3">
+                                <a href="#" class="text-white text-decoration-none">
+                                    <i class="fa fa-phone text-danger"></i> 041 4488541
+                                </a>
+                            </li>
+                            <li class="list-inline-item me-3">
+                                <a href="#" class="text-white text-decoration-none">
+                                    <i class="fa fa-envelope text-danger"></i> <span class="text-white">eletro@email.com</span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-white text-decoration-none">
+                                    <i class="fa fa-map-marker text-danger"></i> Matara-Galle Road
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-3"><a href="#" class="text-white text-decoration-none"><i class="fa fa-dollar text-danger"></i> USD</a></li>
+                            <li class="list-inline-item"><a href="my-account.html" class="text-white text-decoration-none"><i class="fa fa-user-o text-danger"></i> My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Header -->
+            <div id="header"  class="bg-dark py-3">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-lg-3 col-sm-6 mb-2 mb-lg-0">
+                            <a href="index.html" class="navbar-brand">
+                                <img src="./img/logo.png" alt="Logo" class="img-fluid">
+                            </a>
+                        </div>
+
+                        <!-- Right Side: Wishlist & Cart -->
+                        <div class="col-lg-9 col-sm-6 text-end">
+                            <div class="d-flex justify-content-end align-items-center gap-4 flex-wrap">
+
+                                <!-- Wishlist -->
+                                <div>
+                                    <a href="#" class="text-white text-decoration-none position-relative">
+                                        <i class="fa fa-heart fa-lg text-danger"></i>
+                                        <span class="ms-1 text-white">Wishlist</span>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            2
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <!-- Cart -->
+                                <a href="cart.html" class="text-white text-decoration-none">
+                                    <i class="fa fa-shopping-cart fa-lg text-danger"></i>
+                                    <span class="ms-1 text-white">Cart</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- /row -->
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <main class="main-wrapper">
+
+            <!-- Start Cart Area  -->
+            <div class="axil-product-cart-area axil-section-gap">
+                <div class="container">
+                    <div class="axil-product-cart-wrap">
+                        <div class="product-table-heading">
+                            <h4 class="title">Your Cart</h4>
+                            <a href="#" class="cart-clear">Clear Shoping Cart</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table axil-product-table axil-cart-table mb--40">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="product-remove"></th>
+                                        <th scope="col" class="product-thumbnail">Product</th>
+                                        <th scope="col" class="product-title"></th>
+                                        <th scope="col" class="product-price">Price</th>
+                                        <th scope="col" class="product-quantity">Quantity</th>
+                                        <th scope="col" class="product-subtotal">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cart-item-container">
+
+                                    <tr id="cart-item-row">
+                                        <td class="product-remove"><a href="#" class="remove-wishlist"><i class="fal fa-times"></i></a></td>
+                                        <td class="product-thumbnail"><a href="#"><img src="./images/product/product-01.png" alt="Product"></a></td>
+                                        <td class="product-title"><a href="#">Title</a></td>
+                                        <td class="product-price" data-title="Price"><span class="currency-symbol">Rs. </span><span>100,000.00</span></td>
+                                        <td class="product-quantity" data-title="Qty">
+                                            <div class="pro-qty">
+                                                <input type="number" class="quantity-input" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal" data-title="Subtotal"><span class="currency-symbol">Rs. </span><span>100,000.00</span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-7 offset-xl-7 offset-lg-5">
+                                <div class="axil-order-summery mt--20">
+                                    <h5 class="title mb--20">Order Summary</h5>
+                                    <div class="summery-table-wrap">
+                                        <table class="table summery-table mb--30">
+                                            <tbody>
+                                                <tr class="order-subtotal">
+                                                    <td>Quantities</td>
+                                                    <td class="order-total-amount" id="order-total-quantity">1</td>
+                                                </tr>
+                                                <tr class="order-total">
+                                                    <td>Total</td>
+                                                    <td class="order-total-amount">Rs. <span id="order-total-amount">100,000.00</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <a href="checkout.html" class="axil-btn btn-bg-primary checkout-btn">Process to Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Cart Area  -->
+
+        </main>
+
+
+        <!-- Start Footer Area  -->
+        <footer id="footer">
+            <!-- top footer -->
+            <div class="section">
+                <!-- container -->
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="footer">
+                                <h5 class="footer-title">About Us</h5>
+                                <p>Powering performance, connecting possibilities.</p>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#"><i class="fa fa-map-marker"></i> Matara-Galle Road</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i> 041 4488541</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> electro@email.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="footer">
+                                <h5 class="footer-title">Categories</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#">Hot deals</a></li>
+                                    <li><a href="#">Laptops</a></li>
+                                    <li><a href="#">Smartphones</a></li>
+                                    <li><a href="#">Cameras</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="footer">
+                                <h5 class="footer-title">Information</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Orders and Returns</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="footer">
+                                <h5 class="footer-title">Service</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">View Cart</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Track My Order</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- /container -->
+            </div>
+            <!-- /top footer -->
+
+            <!-- bottom footer -->
+            <div id="bottom-footer" class="section">
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="container text-center">
+                                <ul class="footer-payments">
+                                    <li><img src="images/icons/mastercard.png" alt="paypal cart"></li>
+                                    <li><img src="images/icons/visa.png" alt="paypal cart"></li>
+                                </ul>
+                            </div>
+                            <span class="copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Electro. <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </span>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /bottom footer -->
+
+        </footer>
+        <!-- End Footer Area  -->
+
+
+        <!-- JS
+    ============================================ -->
+        <!-- Modernizer JS -->
+        <script src="js/vendor/modernizr.min.js"></script>
+        <!-- jQuery JS -->
+        <script src="js/vendor/jquery.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="js/vendor/popper.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/slick.min.js"></script>
+        <script src="js/vendor/js.cookie.js"></script>
+        <!-- <script src="js/vendor/jquery.style.switcher.js"></script> -->
+        <script src="js/vendor/jquery-ui.min.js"></script>
+        <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/vendor/jquery.countdown.min.js"></script>
+        <script src="js/vendor/sal.js"></script>
+        <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+        <script src="js/vendor/isotope.pkgd.min.js"></script>
+        <script src="js/vendor/counterup.js"></script>
+        <script src="js/vendor/waypoints.min.js"></script>
+
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
+
+        <script src="js/cart.js"></script>
+
+        <script src="js/notification.js"></script>
+
+    </body>
+
+</html>
